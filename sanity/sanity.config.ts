@@ -10,7 +10,8 @@ export default defineConfig({
   name: 'default',
   title: 'tomato-chicken',
 
-  projectId: 'nnzoqjxs',
+  projectId: 'DIN SANITY-PROJECT-ID',
+  //Hvordan finne projectID: https://lms.webtricks.blog/kurs/uin/sanity-og-groq/sette-opp-sanity-for-et-react-prosjekt
   dataset: 'production',
 
   plugins: [deskTool(), visionTool(), ...(isDev ? devOnlyPlugins : [])],
