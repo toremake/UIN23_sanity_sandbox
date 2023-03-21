@@ -1,18 +1,14 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import ProductPage from './components/ProductPage';
+import Products from './components/Products';
 
 function App() {
-
-  let PROJECTID = 'nnzoqjxs'
-  let DATASET = 'production'
-  let QUERY = encodeURIComponent('*[_type == "products"]')
-  let URL = `https://${PROJECTID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`
-
-  fetch(URL)
-  .then((results) => results.json())
-  .then(({result}) => {console.log(result)})
-
   return (
-    <h1>Innhold fra Sanity</h1>
+    <Routes>
+      <Route index element={<Products />} />
+      <Route path=":slug" element={<ProductPage />} />
+    </Routes>
   );
 }
 
