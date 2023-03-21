@@ -31,6 +31,7 @@ const ProductPage = () => {
         <h1>{prodInfo?.product_title}</h1>
         {prodInfo?.product_image ? <img src={urlFor(prodInfo.product_image).width(400).url()} alt={`Produktbilde av ${prodInfo.product_title}`} /> : null}
         <p>Pris: {prodInfo?.price}</p>
+        <p>Slug: {slug}</p>
         </>
     )
 }
