@@ -10,7 +10,8 @@ export const fetchAllProducts = async () => {
 export const fetchProduct = async (slug) => {
     const data = await client.fetch(`
     *[_type == "products" && slug.current == $slug]
-    {product_title, price, quantity, "imageURL":product_image.asset->url, "catname": category->category_title}
+    {_id, product_title, price, quantity, "imageURL":product_image.asset->url, 
+    "catname": category->category_title}
     `,{slug})
     return data
 }

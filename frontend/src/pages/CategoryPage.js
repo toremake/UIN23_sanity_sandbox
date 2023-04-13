@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
-import { Link, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import { fetchCategory } from "../lib/sanity/categoryServices"
+import ProductCard from "../components/ProductCard"
 
-export default function CategoryPage() {
+export default function CategoryPage({addToCart}) {
     const {category} = useParams()
 
     //lager en state for å lagre kategori (og senere produkter)
@@ -24,8 +25,9 @@ export default function CategoryPage() {
     return (
         <>
         <h1>{catProds?.category_title}</h1>
-        {catProds?.products.map((p,i) => <p key={i}><Link to={`/${p.slug}`}>
-            {p.product_title} NOK: {p.price},-</Link></p>)}
+        <section className="productlist">
+        {catProds?.products.map((p,i) => <ProductCard productinfo={p} key={i} addToCart={addToCart} />)}
+            </section>
         </>
     )
 }

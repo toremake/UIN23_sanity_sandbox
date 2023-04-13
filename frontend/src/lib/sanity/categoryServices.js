@@ -10,7 +10,7 @@ export const fetchCategory = async (category) => {
     *[_type == "categories" && category_slug.current == $category]
     {category_title, "products": 
       *[_type == "products" && category._ref == ^._id]
-      {product_title, price, "slug": slug.current}
+      {_id, product_title, price, slug, "imageURL":product_image.asset->url}
     }`,{category})
     return data
 }

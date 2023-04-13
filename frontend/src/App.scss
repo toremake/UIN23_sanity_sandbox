@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap');
+
+:root {
+  --blue:     #006DB7;
+  --red:      #DA291C;
+  --yellow:   #FFD700;
+  --green:    #00AF4D;
+  --white:    #ffffff;
+  --black:    #000000;
+}
+
+body {
+  background-color: var(--yellow);
+  background-image: url("images/mainbackground.png");
+  background-repeat: repeat;
+  color: var(--black);
+  font-family: 'Rubik', sans-serif;
+  font-size: 18px;
+}
+
+div, section, article, header, footer {
+  box-sizing: border-box;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+footer a {
+  color: var(--white);
+}
+
+@import 'sass/mixins';
+@import 'sass/structure';
+@import 'sass/cart';
+@import 'sass/productlist';
+@import 'sass/productcard';

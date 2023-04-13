@@ -1,0 +1,22 @@
+.product {
+    width: 100%;
+    @include breakpoint(tablet) { width: 48%; }
+    @include breakpoint(desktop) { width: 32%; }
+    
+    img {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+.product-single {
+    display: flex;
+    gap: 1rem;
+}
+
+.price {
+    font-size: 2rem;
+    color: var(--blue);
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

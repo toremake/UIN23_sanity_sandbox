@@ -20,11 +20,11 @@ export default function CategoriesPage() {
     console.log(cats)
 
     return (
-        <>
+        <section className="productlist">
         <h1>Alle kategorier</h1>
         <ul>
             {cats?.map((c, i) => <li key={`c${i}`}><Link to={c.category_slug.current}>{c.category_title}</Link></li>)}
         </ul>
-        </>
+        </section>
     )
 }
